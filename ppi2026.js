@@ -12,16 +12,16 @@ let x = 5 + 5; // soma
 let y = "5" + 5; // concatenação
 let z = "Hello" + 5;
 
-console.log(x**2, y, z); // potência
+console.log(x ** 2, y, z); // potência
 console.log(typeof x);
 
 // Ativar o formatador Prettier
 // ALT + SHIFT + F
 
-// Operadores relacionais 
-console.log('5' != 5); // Diferença
-console.log('5' == 5); // Compara tipo OU valor 
-console.log('5' === 5); // Compara tipo E valor
+// Operadores relacionais
+console.log("5" != 5); // Diferença
+console.log("5" == 5); // Compara tipo OU valor
+console.log("5" === 5); // Compara tipo E valor
 
 // Operadores de incremento
 console.log(x++); // incremento após o retorno do valor
@@ -39,9 +39,9 @@ console.log(isExpression);
 
 // if...else
 // if (condition) {
-    
+
 // } else {
-    
+
 // }
 
 // Template Strings
@@ -56,13 +56,13 @@ console.log(text);
 // }
 
 // Array
-let fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 console.log(fruits.lenght); // Tamanho
 
 console.log(fruits[0]); // Posição 0
 
-fruits.push('Kiwi'); // Insere elemento no final da lista
+fruits.push("Kiwi"); // Insere elemento no final da lista
 console.log(fruits);
 
 console.log(fruits.pop()); // Remove e retorna o último elemento
@@ -71,33 +71,33 @@ console.log(fruits);
 console.log(fruits.shift()); // Remove e retorna o primeiro elemento
 console.log(fruits);
 
-fruits.unshift('Lemon'); // Insere elemento no começo da lista
+fruits.unshift("Lemon"); // Insere elemento no começo da lista
 console.log(fruits);
 
-// Argumento 1 - posição 
+// Argumento 1 - posição
 // Argumento 2 - qts elementos serão removidos
 // Argumento 3 - lista de elementos que seraõ inseridos
 
-fruits.splice(2, 0, 'Kiwi', 'Blueberry');
+fruits.splice(2, 0, "Kiwi", "Blueberry");
 console.log(fruits);
 
 fruits.splice(2, 1);
 console.log(fruits);
 
 // Desafio - substituir 'Apple' por 'Kiwi'
-fruits.splice(3, 1, 'Kiwi'); 
+fruits.splice(3, 1, "Kiwi");
 console.log(fruits);
 
 // Busca índice do elemento 'Kiwi'
-let index = fruits.indexOf('Kiwi');
+let index = fruits.indexOf("Kiwi");
 console.log(index);
 
-fruits.splice(index, 1, 'Apple');
+fruits.splice(index, 1, "Apple");
 console.log(fruits);
 
 // Não altera array
-console.log('Sort/Reverse');
-let fruitsSort = fruits.toSorted(); 
+console.log("Sort/Reverse");
+let fruitsSort = fruits.toSorted();
 console.log(fruits);
 console.log(fruitsSort);
 
@@ -110,7 +110,7 @@ fruits.sort();
 console.log(fruits);
 
 // Ordem decrescente
-fruits.reverse(); 
+fruits.reverse();
 console.log(fruits);
 
 const numbers = [45, 4, 9, 16, 25];
@@ -121,25 +121,91 @@ console.log(numbers);
 
 const numbers2 = [];
 for (let i = 0; i < numbers.length; i++) {
-    numbers2.push(numbers[i]*2);
+  numbers2.push(numbers[i] * 2);
 }
 console.log(numbers);
 console.log(numbers2);
 
-function myFunction(value, index, array){
+function myFunction(value, index, array) {
   return value * 2;
 }
 
 const numbersMap = numbers.map(myFunction);
 console.log(numbersMap);
 
-console.log(numbers.map( (number) => number * 2 ));
+console.log(numbers.map((number) => number * 2));
 
 console.log(numbers.toSorted((a, b) => a - b)); //C
 console.log(numbers.toSorted((a, b) => a - b)); //D
 
-numbers.sort(((a, b) => a - b);
-// Maior valor 
-console.log('Maior =', numbers[numbers.lenght-1])
+numbers.sort((a, b) => a - b);
+// Maior valor
+console.log("Maior =", numbers[numbers.lenght - 1]);
 // Menor valor
+console.log("Menor =", numbers[0]);
 
+// Aula 13/05 - Funções, array destructuring, spread operator
+console.log(fruits);
+
+const fruits2 = ["Kiwi", "Avocado"];
+console.log([...fruits2, "Grape"]);
+
+// Spread - ...
+const fruits3 = [...fruits, ...fruits2];
+console.log(fruits3);
+
+// Desafio - Exibir todas as frutas que comecem com a letra "A"
+
+const out = [];
+const letra = "a";
+for (let i = 0; i < fruits3.lenght; i++) {
+  const fruit = fruits3[i];
+
+  if (fruits[0].toLowerCase() == letra) {
+    out.push(fruit);
+  }
+}
+
+fruits3.map((fruit) => {
+  if (fruit[0].toLowerCase() == letra) {
+    out.push(fruit);
+  }
+});
+console.log(out);
+
+// find - retorna a primeira ocorrência,
+// de acordo com a condição
+let outFind = fruits3.find((fruit) => fruit[0].toLowerCase() === letra);
+console.log(outFind);
+
+// filter - retorna TODAS as ocorrências
+// de acordo com a condição
+let outFilter = fruits3.filter((fruit) => fruit[0].toLowerCase() === letra);
+console.log(outFilter);
+
+// DESAFIO - Exibir o valor da soma de todos os
+// números do array 'numbers'
+
+console.log(numbers);
+
+// map
+let soma = 0;
+numbers.map((number) => {
+  soma += number;
+});
+console.log(soma);
+
+// reduce
+console.log(
+  numbers.reduce((soma, number) => soma = number)
+);
+
+// Object
+const pessoa = {
+  nome: 'Zé Vaqueiro',
+  idade: 25,
+  profissao: 'Cantor/Compositor'
+};
+
+console.log(pessoa.nome);
+console.log(pessoa['nome']);
