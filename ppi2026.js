@@ -1,3 +1,5 @@
+import { a } from "vitest/dist/chunks/suite.qtkXWc6R";
+
 console.log("Bem vindo a PPI");
 // Variáveis
 let name = "Victor";
@@ -256,6 +258,47 @@ const valorTotal = estoque
   .reduce((valor, p) => valor + p.price * p.qty, 0)
   .toFixed(2);
   console.log(`Valor total: R$ ${valorTotal}`);
+
+  // b) Ordene os produtos por nome (crescente/descrescente)
+  const NomeCrescente = 
+    estoque.sort((a, b) =>
+    a.name. LocaleCompare(b.name)
+  );
+
+  console.log("Nome crescente:", NomeCrescente);
+
+  const NomeDescrescente =
+  estoque.sort((a, b) =>
+    b.name. LocaleCompare(a.name)
+);
+
+console.log("NomeDescrescente:", NomeDescrescente);
+
+// c) Ordene os produtos por preço (crescente/descrescente)
+const PrecoCrescente = 
+estoque.sort((a, b) =>
+  a.price - b.price
+);
+
+console.log("PreçoCrescente:", PrecoCrescente);
+
+const PrecoDescrescente =
+estoque.sort((a, b) =>
+  b.price - a.price
+);
+
+console.log("PreçoDescrescente:", PrecoDescrescente);
+
+// d) Filtre produtos de acordo uma categoria
+const categoriaFiltrada =
+estoque.Filter(estoque =>
+  estoque.category === "iPhone"
+);
+
+console.log("Produtos da categoria iPhone:", categoriaFiltrada);
+
+
+
 
 
 
