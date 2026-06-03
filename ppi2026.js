@@ -297,6 +297,12 @@ estoque.Filter(estoque =>
 
 console.log("Produtos da categoria iPhone:", categoriaFiltrada);
 
+// Desafio 2
+
+// Questão 1 — Média de notas e filtro de aprovados
+
+const 
+
 
 
 
