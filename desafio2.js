@@ -25,5 +25,28 @@ const aprovados = alunos
 console.log(aprovados);
 
 // Questão 2 — Catálogo de filmes com busca e ordenação
+const filmes = [
+  { titulo: "O Senhor dos Anéis", ano: 2001, genero: "fantasia" },
+  { titulo: "Matrix", ano: 1999, genero: "ficção" },
+  { titulo: "Interestelar", ano: 2014, genero: "ficção" },
+  { titulo: "Divertida Mente", ano: 2015, genero: "animação" },
+];
 
+function buscarFilmes(genero, criterio) {
+    const filtro = filmes.filter((filme) => filme.genero === genero);
+
+    if(criterio === 'titulo') {
+      filtro.sort((a, b) => a.titulo.localeCompare(b.titulo));
+    } else if(criterio === 'ano') {
+      filtro.sort((a, b) => b.ano - a.ano);
+     } else {
+        console.log("Critério inválido!");
+        filtro.lenght = 0;
+      }
+
+      console.log(
+        filtro.map((filme) => ´$
+      )
+    }
+}
 
